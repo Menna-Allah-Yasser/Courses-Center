@@ -17,30 +17,25 @@ import java.util.List;
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "teacher_generator")
+    @Column(name = "teacher_id")
     private Long teacherId;
+
     private String name;
+
     @Column(unique = true)
+    @NonNull
     private String email;
+
     private Gender gender;
+
     @NonNull
     private String password;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Course> courses=new ArrayList<>();
 
-    public Teacher(String name, String email, Gender gender) {
+    public Teacher(String name, @NonNull String email, Gender gender, @NonNull String password) {
         this.name = name;
         this.email = email;
         this.gender = gender;
+        this.password = password;
     }
 
-    public Teacher(String name, String email, Gender gender, List<Course> courses) {
-        this.name = name;
-        this.email = email;
-        this.gender = gender;
-        this.courses = courses;
-    }
-    public void addCourseToTeacher(Course course){
-        courses.add(course);
-        course.setTeacher(this);
-    }
 }

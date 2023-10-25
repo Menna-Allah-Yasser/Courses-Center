@@ -16,12 +16,14 @@ import javax.persistence.*;
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "admin_generator")
+    @Column(name="admin_id")
     private Long adminId;
 
     private String name;
 
     @NonNull
     private String password;
+
     @NonNull
     @Column(unique = true)
     private String email;
