@@ -2,6 +2,7 @@ package org.hibernate.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -18,8 +19,11 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "teacher_denerator")
     private Long teacherId;
     private String name;
+    @Column(unique = true)
     private String email;
     private Gender gender;
+    @NonNull
+    private String password;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Course> courses=new ArrayList<>();
 

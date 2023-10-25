@@ -2,6 +2,7 @@ package org.hibernate.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -20,8 +21,11 @@ public class Student {
 
     private String fname;
     private  String lname;
+    @Column(unique = true)
     private String email;
     private Gender gender;
+    @NonNull
+    private String password;
     @ManyToMany(mappedBy = "students" , cascade = CascadeType.ALL)
     private List<Course> courses=new ArrayList<>();
 

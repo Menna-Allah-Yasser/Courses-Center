@@ -46,17 +46,30 @@ public class Main {
        // adminDB.deleteAdmin(admin , em);
         ////////////////////////////////*/
 
-        ////////////////////////////////
-        Admin admin=new Admin("admin1" , "admin1pass");
-        Admin admin2=new Admin("admin2" , "admin2pass");
-        GenericRepoImp <Admin> genericRepoImp=new GenericRepoImp<>();
-        GeneralServices<Admin>generalServices=new GeneralServices<>(em ,genericRepoImp );
-        generalServices.insert(admin);
-        generalServices.insert(admin2);
-        /*Admin admin3=generalServices.findById(1001L);
-        System.out.println(admin3.getName()+"  "+admin3.getPassword());*/
-        generalServices.delete(admin);
-        ///////////////////////////////
+        /*/////////////////////////////////
+        Student student1=new Student("menna" , "allah" , "menna@menna@",Gender.female);
+        Student student2=new Student("salma" , "yasser" , "menna@menna@",Gender.female);
+        em.persist(student1);
+        em.persist(student2);
+
+        /////////////////////////////////*/
+
+
+        /////////////////////////////////
+         Admin admin1=new Admin("eslam" , "123" , "eslam@");
+         Admin admin2=new Admin("eslam" , "123456" , "eslam1@");
+         em.persist(admin1);
+         em.persist(admin2);
+
+         Teacher teacher1=new Teacher("salma" , "salma@" , Gender.female);
+         Teacher teacher2=new Teacher("menna" , "menna@" , Gender.female);
+         em.persist(teacher1);
+         em.persist(teacher2);
+
+        /////////////////////////////////
+
+
+
 
         em.getTransaction().begin();
         em.getTransaction().commit();

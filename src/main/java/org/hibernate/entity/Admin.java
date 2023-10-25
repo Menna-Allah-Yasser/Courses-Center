@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+
 @Entity
 @Setter
 @Getter
@@ -16,12 +17,18 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "admin_denerator")
     private Long adminId;
+
     private String name;
+
     @NonNull
     private String password;
+    @NonNull
+    @Column(unique = true)
+    private String email;
 
-    public Admin(String name, @NonNull String password) {
+    public Admin(String name, @NonNull String password, @NonNull String email) {
         this.name = name;
         this.password = password;
+        this.email = email;
     }
 }
