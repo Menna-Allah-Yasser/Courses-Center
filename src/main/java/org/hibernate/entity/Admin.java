@@ -12,10 +12,10 @@ import javax.persistence.*;
 @Setter
 @Getter
 @NoArgsConstructor
-@SequenceGenerator(name = "admin_denerator" , initialValue = 1000)
+@SequenceGenerator(name = "admin_generator" , initialValue = 1000)
 public class Admin {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "admin_denerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "admin_generator")
     private Long adminId;
 
     private String name;

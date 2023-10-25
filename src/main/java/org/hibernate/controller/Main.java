@@ -66,6 +66,13 @@ public class Main {
          em.persist(teacher1);
          em.persist(teacher2);
 
+         Student student=new Student("mo" , "yasser" , "mo@" , Gender.male);
+         em.persist(student);
+
+         Course course = new Course("CO" , teacher1);
+         teacher1.addCourseToTeacher(course);
+         em.persist(course);
+
         /////////////////////////////////
 
 

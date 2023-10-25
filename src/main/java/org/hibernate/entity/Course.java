@@ -12,10 +12,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@SequenceGenerator(name = "course_denerator" , initialValue = 2000)
+@SequenceGenerator(name = "course_generator" , initialValue = 2000)
 public class Course {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY ,generator = "course_denerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY ,generator = "course_generator")
     private Long courseId;
 
     private String name;

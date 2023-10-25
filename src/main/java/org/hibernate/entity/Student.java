@@ -13,10 +13,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@SequenceGenerator(name = "student_denerator" , initialValue = 4000)
+@SequenceGenerator(name = "student_generator" , initialValue = 4000)
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "student_denerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY , generator = "student_generator")
     private Long studentId;
 
     private String fname;
